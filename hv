@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANTROLIN® - Oberflächenpflege für alles, was glänzen soll</title>
+    <style>
+        :root {
+            /* Primitive Color Tokens */
+            --color-white: rgba(255, 255, 255, 1);
+            --color-black: rgba(0, 0, 0, 1);
+            --color-cream-50: rgba(252, 252, 249, 1);
+            --color-cream-100: rgba(255, 255, 253, 1);
+            --color-gray-200: rgba(245, 245, 245, 1);
+            --color-gray-300: rgba(167, 169, 169, 1);
+            --color-gray-400: rgba(119, 124, 124, 1);
+            --color-slate-500: rgba(98, 108, 113, 1);
+            --color-brown-600: rgba(94, 82, 64, 1);
+            --color-charcoal-700: rgba(31, 33, 33, 1);
+            --color-charcoal-800: rgba(38, 40, 40, 1);
+            --color-slate-900: rgba(19, 52, 59, 1);
+            --color-teal-300: rgba(50, 184, 198, 1);
+            --color-teal-400: rgba(45, 166, 178, 1);
+            --color-teal-500: rgba(33, 128, 141, 1);
+            --color-teal-600: rgba(29, 116, 128, 1);
+            --color-teal-700: rgba(26, 104, 115, 1);
+            --color-teal-800: rgba(41, 150, 161, 1);
+            --color-red-400: rgba(255, 84, 89, 1);
+            --color-red-500: rgba(192, 21, 47, 1);
+            --color-orange-400: rgba(230, 129, 97, 1);
+            --color-orange-500: rgba(168, 75, 47, 1);
+
+            /* RGB versions for opacity control */
+            --color-brown-600-rgb: 94, 82, 64;
+            --color-teal-500-rgb: 33, 128, 141;
+            --color-slate-900-rgb: 19, 52, 59;
+            --color-slate-500-rgb: 98, 108, 113;
+            --color-red-500-rgb: 192, 21, 47;
+            --color-red-400-rgb: 255, 84, 89;
+            --color-orange-500-rgb: 168, 75, 47;
+            --color-orange-400-rgb: 230, 129, 97;
+
+            /* Background color tokens */
+            --color-bg-1: rgba(59, 130, 246, 0.08);
+            --color-bg-2: rgba(245, 158, 11, 0.08);
+            --color-bg-3: rgba(34, 197, 94, 0.08);
+            --color-bg-4: rgba(239, 68, 68, 0.08);
+            --color-bg-5: rgba(147, 51, 234, 0.08);
+            --color-bg-6: rgba(249, 115, 22, 0.08);
+            --color-bg-7: rgba(236, 72, 153, 0.08);
+            --color-bg-8: rgba(6, 182, 212, 0.08);
+
+            /* Semantic Color Tokens */
+            --color-background: var(--color-cream-50);
+            --color-surface: var(--color-cream-100);
+            --color-text: var(--color-slate-900);
+            --color-text-secondary: var(--color-slate-500);
+            --color-primary: var(--color-teal-500);
+            --color-primary-hover: var(--color-teal-600);
+            --color-primary-active: var(--color-teal-700);
+            --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+            --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+            --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+            --color-btn-primary-text: var(--color-cream-50);
+            --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-error: var(--color-red-500);
+            --color-success: var(--color-teal-500);
+            --color-warning: var(--color-orange-500);
+            --color-info: var(--color-slate-500);
+            --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+
+            /* Antrolin Brand Colors */
+            --antrolin-red: #CC2D1D;
+            --antrolin-red-hover: #B02619;
+            --antrolin-red-active: #9A2016;
+
+            /* Typography */
+            --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-size-xs: 11px;
+            --font-size-sm: 12px;
+            --font-size-base: 14px;
+            --font-size-md: 14px;
+            --font-size-lg: 16px;
+            --font-size-xl: 18px;
+            --font-size-2xl: 20px;
+            --font-size-3xl: 24px;
+            --font-size-4xl: 30px;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 550;
+            --font-weight-bold: 600;
+            --line-height-tight: 1.2;
+            --line-height-normal: 1.5;
+            --letter-spacing-tight: -0.01em;
+
+            /* Spacing */
+            --space-4: 4px;
+            --space-8: 8px;
+            --space-12: 12px;
+            --space-16: 16px;
+            --space-20: 20px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --space-48: 48px;
+            --space-64: 64px;
+
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-base: 8px;
+            --radius-md: 10px;
+            --radius-lg: 12px;
+            --radius-full: 9999px;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+
+            /* Animation */
+            --duration-fast: 150ms;
+            --duration-normal: 250ms;
+            --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-background: var(--color-charcoal-700);
+                --color-surface: var(--color-charcoal-800);
+                --color-text: var(--color-gray-200);
+                --color-text-secondary: rgba(167, 169, 169, 0.7);
+                --color-border: rgba(119, 124, 124, 0.3);
+                --color-card-border: rgba(119, 124, 124, 0.2);
+            }
+        }
+
+        @font-face {
+            font-family: 'FKGroteskNeue';
+            src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2') format('woff2');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-normal);
+            color: var(--color-text);
+            background-color: var(--color-background);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--color-surface);
+            border-bottom: 1px solid var(--color-card-border);
+            padding: var(--space-16) 0;
+            z-index: 1000;
+            transition: box-shadow var(--duration-normal) var(--ease-standard);
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--space-24);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--antrolin-red);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+        }
+
+        .logo-tagline {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            font-weight: var(--font-weight-normal);
+        }
+
+        .nav {
+            display: flex;
+            gap: var(--space-32);
+            list-style: none;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: var(--font-weight-medium);
+            transition: color var(--duration-fast) var(--ease-standard);
+            font-size: var(--font-size-base);
+        }
+
+        .nav a:hover {
+            color: var(--antrolin-red);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--space-8);
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--color-text);
+            margin: 5px 0;
+            transition: all var(--duration-fast) var(--ease-standard);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: var(--space-64) var(--space-24);
+            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-background) 100%);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: var(--font-weight-bold);
+            line-height: var(--line-height-tight);
+            margin-bottom: var(--space-24);
+            color: var(--color-text);
+            letter-spacing: var(--letter-spacing-tight);
+        }
+
+        .hero-subtitle {
+            font-size: var(--font-size-xl);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-32);
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: var(--space-16) var(--space-32);
+            border-radius: var(--radius-base);
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-medium);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--duration-normal) var(--ease-standard);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--antrolin-red);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--antrolin-red-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:active {
+            background-color: var(--antrolin-red-active);
+            transform: translateY(0);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: var(--space-64) var(--space-24);
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            text-align: center;
+            margin-bottom: var(--space-48);
+            color: var(--color-text);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-24);
+        }
+
+        .feature-card {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-card-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-32);
+            text-align: center;
+            transition: all var(--duration-normal) var(--ease-standard);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-bg-1);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-20);
+            font-size: var(--font-size-3xl);
+        }
+
+        .feature-card:nth-child(2) .feature-icon {
+            background-color: var(--color-bg-3);
+        }
+
+        .feature-card:nth-child(3) .feature-icon {
+            background-color: var(--color-bg-6);
+        }
+
+        .feature-card:nth-child(4) .feature-icon {
+            background-color: var(--color-bg-5);
+        }
+
+        .feature-card h3 {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-12);
+            color: var(--color-text);
+        }
+
+        .feature-card p {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-base);
+        }
+
+        /* Applications Grid */
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-24);
+        }
+
+        .application-card {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-card-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-24);
+            transition: all var(--duration-normal) var(--ease-standard);
+        }
+
+        .application-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--antrolin-red);
+        }
+
+        .application-card h3 {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-12);
+            color: var(--antrolin-red);
+        }
+
+        .application-card p {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-base);
+        }
+
+        /* Product Details */
+        .product-section {
+            background-color: var(--color-surface);
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-64);
+            align-items: center;
+        }
+
+        .product-image {
+            background: linear-gradient(135deg, var(--color-bg-1) 0%, var(--color-bg-3) 100%);
+            border-radius: var(--radius-lg);
+            padding: var(--space-64);
+            text-align: center;
+            font-size: 120px;
+            color: var(--antrolin-red);
+        }
+
+        .product-details h2 {
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--space-16);
+            color: var(--color-text);
+        }
+
+        .product-tagline {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-32);
+        }
+
+        .product-specs {
+            background-color: var(--color-background);
+            border-radius: var(--radius-base);
+            padding: var(--space-24);
+            margin-bottom: var(--space-24);
+        }
+
+        .product-spec {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--space-12) 0;
+            border-bottom: 1px solid var(--color-card-border);
+        }
+
+        .product-spec:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            font-weight: var(--font-weight-medium);
+            color: var(--color-text);
+        }
+
+        .spec-value {
+            color: var(--color-text-secondary);
+        }
+
+        .product-price {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--antrolin-red);
+            margin-bottom: var(--space-24);
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-24);
+        }
+
+        .testimonial-card {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-card-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-24);
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-12);
+        }
+
+        .testimonial-quote {
+            font-size: var(--font-size-base);
+            color: var(--color-text);
+            margin-bottom: var(--space-16);
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--space-24);
+        }
+
+        .about-highlight {
+            background-color: var(--color-surface);
+            border-left: 4px solid var(--antrolin-red);
+            padding: var(--space-24);
+            border-radius: var(--radius-base);
+            margin: var(--space-32) 0;
+        }
+
+        .about-highlight h3 {
+            font-size: var(--font-size-2xl);
+            color: var(--color-text);
+            margin-bottom: var(--space-12);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-card-border);
+            border-radius: var(--radius-base);
+            margin-bottom: var(--space-16);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: var(--space-20);
+            background: none;
+            border: none;
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color var(--duration-fast) var(--ease-standard);
+        }
+
+        .faq-question:hover {
+            background-color: var(--color-secondary);
+        }
+
+        .faq-icon {
+            transition: transform var(--duration-normal) var(--ease-standard);
+            font-size: var(--font-size-xl);
+            color: var(--antrolin-red);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--duration-normal) var(--ease-standard);
+        }
+
+        .faq-answer-content {
+            padding: 0 var(--space-20) var(--space-20);
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        /* Newsletter */
+        .newsletter-section {
+            background-color: var(--color-surface);
+            text-align: center;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: var(--space-12);
+            margin-top: var(--space-32);
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: var(--space-12) var(--space-16);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-base);
+            font-size: var(--font-size-base);
+            color: var(--color-text);
+            background-color: var(--color-background);
+        }
+
+        .newsletter-input:focus {
+            outline: 2px solid var(--antrolin-red);
+            border-color: var(--antrolin-red);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--color-charcoal-800);
+            color: var(--color-gray-200);
+            padding: var(--space-48) var(--space-24);
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-48);
+        }
+
+        .footer-section h3 {
+            color: var(--color-white);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-16);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--space-8);
+        }
+
+        .footer-links a {
+            color: var(--color-gray-300);
+            text-decoration: none;
+            transition: color var(--duration-fast) var(--ease-standard);
+        }
+
+        .footer-links a:hover {
+            color: var(--antrolin-red);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: var(--space-48);
+            padding-top: var(--space-24);
+            border-top: 1px solid rgba(119, 124, 124, 0.3);
+            color: var(--color-gray-300);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--color-surface);
+                flex-direction: column;
+                padding: var(--space-32);
+                gap: var(--space-24);
+                transition: left var(--duration-normal) var(--ease-standard);
+                box-shadow: var(--shadow-lg);
+            }
+
+            .nav.active {
+                left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-32);
+            }
+
+            .product-image {
+                font-size: 80px;
+                padding: var(--space-48);
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .section {
+                padding: var(--space-48) var(--space-16);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero-subtitle {
+                font-size: var(--font-size-base);
+            }
+
+            .features-grid,
+            .applications-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="#home" class="logo">
+                <span>ANTROLIN®</span>
+                <span class="logo-tagline">seit 1983</span>
+            </a>
+            <nav>
+                <ul class="nav" id="nav">
+                    <li><a href="#home" onclick="closeMenu()">Startseite</a></li>
+                    <li><a href="#produkte" onclick="closeMenu()">Produkte</a></li>
+                    <li><a href="#anwendungen" onclick="closeMenu()">Anwendungen</a></li>
+                    <li><a href="#ueber-uns" onclick="closeMenu()">Über uns</a></li>
+                    <li><a href="#kontakt" onclick="closeMenu()">Kontakt</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMenu()" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Oberflächenpflege für alles, was glänzen soll</h1>
+            <p class="hero-subtitle">Seit 1983 - Das vielseitige Politurwunder</p>
+            <a href="#produkte" class="btn btn-primary">Jetzt entdecken</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="produkte">
+        <h2 class="section-title">Produktmerkmale</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🏠</div>
+                <h3>Für alle Oberflächen</h3>
+                <p>Holz, Kunststoff, Edelstahl, Bildschirme und mehr</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌱</div>
+                <h3>Umweltfreundlich</h3>
+                <p>Nachhaltige Formel ohne schädliche Chemikalien</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Schnell trocknend</h3>
+                <p>Sofortige Anwendbarkeit ohne lange Wartezeit</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Langanhaltender Glanz</h3>
+                <p>Dauerhafter Schutz vor Feuchtigkeit und Schmutz</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section class="section" id="anwendungen">
+        <h2 class="section-title">Anwendungsbereiche</h2>
+        <div class="applications-grid">
+            <div class="application-card">
+                <h3>Möbelpflege</h3>
+                <p>Ideal für Holz- und Kunststoffmöbel</p>
+            </div>
+            <div class="application-card">
+                <h3>Edelstahlreinigung</h3>
+                <p>Perfekter Edelstahlreiniger für glänzende Oberflächen</p>
+            </div>
+            <div class="application-card">
+                <h3>Bildschirme</h3>
+                <p>Sanfte Reinigung von Displays und Monitoren</p>
+            </div>
+            <div class="application-card">
+                <h3>Dekomaterialien</h3>
+                <p>Auffrischung von Dekorations- und Kunstobjekten</p>
+            </div>
+            <div class="application-card">
+                <h3>Kunststoffartikel</h3>
+                <p>Pflege von verschiedensten Kunststoffoberflächen</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Section -->
+    <section class="section product-section">
+        <div class="product-container">
+            <div class="product-image">🧴</div>
+            <div class="product-details">
+                <h2>ANTROLIN® Spezial Möbelpflege</h2>
+                <p class="product-tagline">seit 1983</p>
+                
+                <div class="product-specs">
+                    <div class="product-spec">
+                        <span class="spec-label">Größe</span>
+                        <span class="spec-value">200 ml</span>
+                    </div>
+                    <div class="product-spec">
+                        <span class="spec-label">Verfügbarkeit</span>
+                        <span class="spec-value">Ab Schweizer Lager</span>
+                    </div>
+                </div>
+                
+                <div class="product-price">CHF 11.80</div>
+                
+                <p style="color: var(--color-text-secondary); margin-bottom: var(--space-24); line-height: 1.6;">
+                    ANTROLIN® Spezial Möbelpflege ist das ultimative Pflegemittel für nahezu alle Oberflächen in Ihrem Zuhause. Die einzigartige Formel bietet schnellen Glanz, langanhaltenden Schutz und ist dabei umweltfreundlich.
+                </p>
+                
+                <a href="#kontakt" class="btn btn-primary">Jetzt bestellen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section">
+        <h2 class="section-title">Was unsere Kunden sagen</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-quote">"Alles tiptop! Danke!"</p>
+                <p class="testimonial-author">A. aus Goldach</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-quote">"Ein wenig teurer, aber tipptopp!!!"</p>
+                <p class="testimonial-author">A. aus Muri bei Bern</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-quote">"Super schnelle Lieferung 🚚👍"</p>
+                <p class="testimonial-author">C. aus Iffwil</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-quote">"Bin sehr zufrieden"</p>
+                <p class="testimonial-author">U. aus Binningen</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="ueber-uns">
+        <h2 class="section-title">Über Antrolin</h2>
+        <div class="about-content">
+            <div class="about-highlight">
+                <h3>Seit 1983 Qualität und Innovation</h3>
+                <p style="margin: 0;">Über vier Jahrzehnte Erfahrung in der Oberflächenpflege</p>
+            </div>
+            
+            <p>
+                ANTROLIN® steht seit 1983 für hochwertige Oberflächenpflege. Was als innovative Möbelpolitur begann, hat sich zu einem vielseitigen Pflegeprodukt entwickelt, das in Schweizer Haushalten nicht mehr wegzudenken ist.
+            </p>
+            
+            <p>
+                Unsere Mission ist es, hochwertige Oberflächenpflege für jedermann zugänglich zu machen. Mit ANTROLIN® erhalten Sie ein Produkt, das nicht nur hervorragende Ergebnisse liefert, sondern auch umweltfreundlich und nachhaltig ist.
+            </p>
+            
+            <p>
+                Vertrauen Sie auf über 40 Jahre Erfahrung und entdecken Sie, warum Tausende von zufriedenen Kunden in der Schweiz ANTROLIN® für ihre Oberflächenpflege wählen.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <h2 class="section-title">Häufig gestellte Fragen</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Wie wird Antrolin angewendet?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Tragen Sie Antrolin auf einen weichen Lappen auf und reiben Sie es in kreisenden Bewegungen auf die Oberfläche ein. Danach mit einem trockenen Tuch nachwischen. Keine weitere Nachpolitur erforderlich.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Ist Antrolin umweltfreundlich?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Ja, Antrolin verwendet eine umweltverträgliche Formel, die biologisch abbaubar ist und keine schädlichen Chemikalien enthält.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Für welche Materialien eignet sich Antrolin?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Antrolin eignet sich für Holz, Kunststoff, Edelstahl, Bildschirme, Dekomaterialien und viele weitere Oberflächen.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Wie lange hält der Glanz?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Der langanhaltende Glanz bleibt bei regelmäßiger Anwendung mehrere Wochen erhalten, abhängig von Nutzung und Umgebung.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section newsletter-section" id="kontakt">
+        <h2 class="section-title">Bleiben Sie informiert</h2>
+        <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: var(--space-24);">
+            Melden Sie sich für unseren Newsletter an und erhalten Sie exklusive Angebote und Pflegetipps.
+        </p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" class="newsletter-input" placeholder="Ihre E-Mail-Adresse" required>
+            <button type="submit" class="btn btn-primary">Anmelden</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>ANTROLIN®</h3>
+                <p style="color: var(--color-gray-300); line-height: 1.6;">
+                    Seit 1983 Ihr Partner für professionelle Oberflächenpflege. Qualität aus der Schweiz.
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Kontakt</h3>
+                <ul class="footer-links">
+                    <li>E-Mail: info@antrolin.ch</li>
+                    <li>Tel: +41 XX XXX XX XX</li>
+                    <li>Ab Schweizer Lager</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Rechtliches</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Datenschutz</a></li>
+                    <li><a href="#">AGB</a></li>
+                    <li><a href="#">Impressum</a></li>
+                    <li><a href="#">Widerrufsrecht</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Folgen Sie uns</h3>
+                <ul class="footer-links">
+                    <li><a href="#" target="_blank">Facebook</a></li>
+                    <li><a href="#" target="_blank">Instagram</a></li>
+                    <li><a href="#" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 ANTROLIN®. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.remove('active');
+        }
+
+        // FAQ toggle
+        function toggleFaq(button) {
+            const faqItem = button.parentElement;
+            const wasActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!wasActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Newsletter form handler
+        function handleNewsletter(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            alert('Vielen Dank für Ihre Anmeldung! Wir haben Ihre E-Mail-Adresse (' + email + ') erhalten.');
+            event.target.reset();
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href.length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
